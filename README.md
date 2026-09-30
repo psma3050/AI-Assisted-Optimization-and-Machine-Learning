@@ -19,6 +19,25 @@ The algorithms, surrogate modeling techniques, and optimization pipelines implem
 
 ---
 
+## 📊 Visual Benchmarks & Experimental Results
+
+### 1. Non-Linear Feasibility Region & Hyperparameter Grid Optimization
+*Mapping circuit pass/fail feasibility regions using Support Vector Machines and tuning kernel parameter $\sigma$.*
+
+![SVM RBF Feasibility Boundary & Hyperparameter Optimization](./docs/assets/svm_decision_boundary.png)
+
+### 2. High-Dimensional Circuit Parameter Reduction
+*Sequential Forward Selection (SFS) vs. Ridge Regularization to identify critical design variables.*
+
+![Sequential Feature Selection & Parameter Trade-off](./docs/assets/feature_selection_tradeoff.png)
+
+### 3. Discriminant Analysis & Decision Boundary Surfaces
+*Linear Discriminant Analysis (LDA) vs. 3-Nearest Neighbors (3-NN) performance partitioning.*
+
+![LDA vs 3-NN Decision Surfaces](./docs/assets/lda_knn_decision_surfaces.png)
+
+---
+
 ## 🏛️ Alignment with Infineon Working Student Role
 
 | Infineon Requirement | Repository Implementation & Methodologies | Relevant Modules |
@@ -37,6 +56,7 @@ The algorithms, surrogate modeling techniques, and optimization pipelines implem
 AI_Assisted_Optimization_ML/
 ├── README.md                                  # Comprehensive overview & Infineon alignment
 ├── requirements.txt                            # Python dependencies
+├── generate_readme_plots.py                    # Script to generate benchmark plots
 ├── 01_discriminant_analysis_and_knn/           # Statistical classification & distance metrics
 │   ├── knn_lda_classifier.py                   # k-NN & Linear Discriminant Analysis with 2-fold CV
 │   ├── hw2_1.py                                # Gaussian Naive Bayes classifier implementation
@@ -56,7 +76,11 @@ AI_Assisted_Optimization_ML/
 │   ├── Battery_Health_Prediction_Feature_Selection.pdf
 │   ├── Regression_Based_Hyperparameter_Learning_SVM.pdf
 │   └── Transformer_Self_Attention_EEG.pdf
-└── docs/                                       # Detailed mathematical reports & final project writeups
+└── docs/                                       # Detailed mathematical reports & benchmark figures
+    ├── assets/                                 # Generated visualization figures for README
+    │   ├── svm_decision_boundary.png
+    │   ├── feature_selection_tradeoff.png
+    │   └── lda_knn_decision_surfaces.png
     ├── HW1_Report.pdf
     ├── HW2_Report.pdf
     ├── HW3_Report.pdf
@@ -66,7 +90,7 @@ AI_Assisted_Optimization_ML/
 
 ---
 
-## 🛠️ Technical Details & Modules
+## 🛠️ Technical Details & Mathematical Formulations
 
 ### Module 1: Statistical Classification & Discriminant Analysis
 * **Key Concepts**: Linear Discriminant Analysis (LDA), $k$-Nearest Neighbors ($k$-NN), Gaussian Naive Bayes, Quadratic Discriminant Analysis (QDA).
@@ -99,7 +123,15 @@ cd AI-Assisted-Optimization-and-Machine-Learning
 pip install -r requirements.txt
 ```
 
-### 2. Running Optimization & Classification Modules
+### 2. Generating Benchmark Plots
+
+Re-generate all high-resolution figures:
+
+```bash
+python generate_readme_plots.py
+```
+
+### 3. Running Optimization & Classification Modules
 
 * **Run Custom RBF SVM QP Optimization**:
   ```bash
